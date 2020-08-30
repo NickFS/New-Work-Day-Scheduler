@@ -14,23 +14,23 @@ $(document).ready(function() {
     })
 
     //Load the saved data from local storage. 
-    $("#hour9 .description").val(localStorage.getItem("hour9"));
-    $("#hour10 .description").val(localStorage.getItem("hour10"));
-    $("#hour11 .description").val(localStorage.getItem("hour11"));
-    $("#hour12 .description").val(localStorage.getItem("hour12"));
-    $("#hour13 .description").val(localStorage.getItem("hour13"));
-    $("#hour14 .description").val(localStorage.getItem("hour14"));
-    $("#hour15 .description").val(localStorage.getItem("hour15"));
-    $("#hour16 .description").val(localStorage.getItem("hour16"));
-    $("#hour17 .description").val(localStorage.getItem("hour17"));
+    $("#time-9 .description").val(localStorage.getItem("hour9"));
+    $("#time-10 .description").val(localStorage.getItem("hour10"));
+    $("#time-11 .description").val(localStorage.getItem("hour11"));
+    $("#time-12 .description").val(localStorage.getItem("hour12"));
+    $("#time-13 .description").val(localStorage.getItem("hour13"));
+    $("#time-14 .description").val(localStorage.getItem("hour14"));
+    $("#time-15 .description").val(localStorage.getItem("hour15"));
+    $("#time-16 .description").val(localStorage.getItem("hour16"));
+    $("#time-17 .description").val(localStorage.getItem("hour17"));
 
 
     function timeTracker() {
         //return the current number of hours
-        var currentHour = moment().hour()
+        var currentHour = moment().hour();
 
         //loop over the time blocks
-        $().each(function(){
+        $(".time-block").each(function(){
             var blockHour = parseInt($(this).attr("id").split("hour")[1]);
             console.log(blockHour, currentHour);
 
@@ -39,6 +39,12 @@ $(document).ready(function() {
                 $(this).removeClass("past");
                 $(this).addClass("present");
                 $(this).removeClass("future");
+            }
+
+            else if (blockHour === currentHour){ 
+                $(this).removeClass("past");
+                $(this).addClass("present");
+                $(this).removeClass("future");  
             }
 
             else{
