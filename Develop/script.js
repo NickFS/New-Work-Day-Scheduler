@@ -25,5 +25,29 @@ $(document).ready(function() {
     $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 
+    function timeTracker() {
+        //return the current number of hours
+        var currentHour = moment().hour()
 
+        //loop over the time blocks
+        $().each(function(){
+            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
+            console.log(blockHour, currentHour);
+
+            //Verify if moved past this time
+            if (blockHour < currentHour ){
+                $(this).removeClass("past");
+                $(this).addClass("present");
+                $(this).removeClass("future");
+            }
+
+            else{
+                $(this).removeClass("present");
+                $(this).removeClass("past");
+                $(this).addClass("future");
+            }
+
+        })
+    }
+    timeTracker();
 })
