@@ -14,15 +14,15 @@ $(document).ready(function() {
     })
 
     //Load the saved data from local storage. 
-    $("#time-9 .description").val(localStorage.getItem("hour9"));
-    $("#time-10 .description").val(localStorage.getItem("hour10"));
-    $("#time-11 .description").val(localStorage.getItem("hour11"));
-    $("#time-12 .description").val(localStorage.getItem("hour12"));
-    $("#time-13 .description").val(localStorage.getItem("hour13"));
-    $("#time-14 .description").val(localStorage.getItem("hour14"));
-    $("#time-15 .description").val(localStorage.getItem("hour15"));
-    $("#time-16 .description").val(localStorage.getItem("hour16"));
-    $("#time-17 .description").val(localStorage.getItem("hour17"));
+    $("#time-9 .description").val(localStorage.getItem("time-9"));
+    $("#time-10 .description").val(localStorage.getItem("time-10"));
+    $("#time-11 .description").val(localStorage.getItem("time-11"));
+    $("#time-12 .description").val(localStorage.getItem("time-12"));
+    $("#time-13 .description").val(localStorage.getItem("time-13"));
+    $("#time-14 .description").val(localStorage.getItem("time-14"));
+    $("#time-15 .description").val(localStorage.getItem("time-15"));
+    $("#time-16 .description").val(localStorage.getItem("time-16"));
+    $("#time-17 .description").val(localStorage.getItem("time-17"));
 
 
     function timeTracker() {
@@ -31,13 +31,13 @@ $(document).ready(function() {
 
         //loop over the time blocks
         $(".time-block").each(function(){
-            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
-            console.log(blockHour, currentHour);
+            var blockHour = parseInt($(this).attr("id").split("time-")[1]);
+            
 
             //Verify if moved past this time
             if (blockHour < currentHour ){
-                $(this).removeClass("past");
-                $(this).addClass("present");
+                $(this).addClass("past");
+                $(this).removeClass("present");
                 $(this).removeClass("future");
             }
 
