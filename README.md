@@ -4,3 +4,9 @@
 
  [New Work Day Scheduler](https://nickfs.github.io/New-Work-Day-Scheduler/)
  ![my screenshot](https://github.com/NickFS/New-Work-Day-Scheduler/blob/develop/Develop/workday_screenshot.PNG)
+
+ Made with:
+* [Momement.js](https://momentjs.com/)
+* [Font Awesome](https://fontawesome.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [JQuery](https://jquery.com/)
